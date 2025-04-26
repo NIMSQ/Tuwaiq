@@ -13,6 +13,7 @@
 
 
     <link href='https://fonts.googleapis.com/css?family=Almarai' rel='stylesheet'>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     @vite(['resources/sass/app.scss', 'resources/js/app.js'])
     <style>
         a{
@@ -215,7 +216,7 @@
     </header>
     <main role="main" class="pb-3">
         <div class="row">
-            <div class="col">
+            <div class="col-sm-2 col-md-2 ">
                 <aside id="leftsidebar" class="sidebar">
                     <!-- Menu -->
                     <div class="menu">
@@ -245,8 +246,11 @@
                                        <a asp-action="Station">توزيع اموال</a>
                                     </li>
                                    --> 
+                                   <li class="active">
+                                        <a href="{{route('categories.index')}}">الفئات  </a>
+                                    </li>
                                     <li class="active">
-                                        <a asp-controller="Supplier" asp-action="Create">   المنتجات   </a>
+                                        <a href = "{{route('products.index')}}">   المنتجات   </a>
                                     </li>
                 
                                    
@@ -262,6 +266,7 @@
                                     <li class="active">
                                         <a asp-controller="PurchaseOrder" asp-action="Create">تحليلات  </a>
                                     </li>
+                                    
                 
                                   
                                 </ul>
@@ -316,7 +321,7 @@
                     <!-- #Menu -->
                 </aside>
             </div>
-            <div class="col">
+            <div class="col-sm-10 col-md-10">
                 @yield('content')
             </div>
         </div>
