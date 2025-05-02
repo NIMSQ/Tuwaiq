@@ -17,7 +17,7 @@ return new class extends Migration
             $table->string('description');
             $table->decimal('price',8,2);
             $table->integer('stocke');
-            $table->foreignId('categories_id')->constrained()->delete('cascade');
+            $table->foreignId('categories_id')->constrained()->delete('cascade'); //foregin; if delete categorie delte all the products that related to deleted categorie
             $table->string('image')->nullable();
             $table->timestamps();
         });

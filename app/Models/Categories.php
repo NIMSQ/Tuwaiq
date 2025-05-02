@@ -12,5 +12,11 @@ class Categories extends Model
         'description',
         
     ];
+    //parent table
+    //category <------------------>->product; one to many 
+    public function products()
+    {
+        return $this->hasMany(Products::class);
+    }
 
 }

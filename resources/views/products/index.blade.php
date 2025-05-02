@@ -11,7 +11,7 @@
                     <h3 class="text-white"> اضافة منتج</h3>
                 </div>
                 <div class="card-body">
-                    <form action="{{route('products.create')}}" method="post">
+                    <form action="{{route('products.create')}}" method="post" enctype="multipart/form-data">
                         @CSRF
                         <div class="row">
                             <div class="col">
@@ -91,8 +91,9 @@
                                 <td class="text-center">وصف المنتج</td>
                                 <td class="text-center">سعر المنتج</td>
                                 <td class="text-center">الكميه المخزنه</td>
-                                <td class="text-center">رقم الفئه</td>
                                 <td class="text-center">صورة المنتج</td>
+                                <td class="text-center">رقم الفئه</td>
+                                <td class="text-center">اسم الفئه</td>
                                 <td class="text-center" colspan="2">إجراء</td>
                                 </tr>
                             </thead>
@@ -105,8 +106,9 @@
                                     <td class="text-center"> {{$item->description}}</td>
                                     <td class="text-center"> {{$item->price}}</td>
                                     <td class="text-center"> {{$item->stocke}}</td>
+                                    <td class="text-center"> <img src="{{$item->image}}" width="100" height="100"></td>
                                     <td class="text-center"> {{$item->categories_id}}</td>
-                                    <td class="text-center"> {{$item->image}}</td>
+                                    <td class="text-center"> {{$item->categories_name}}</td>
 
 
                                     <td class="text-center"> <a href="{{Route('products.edit',['id'=>$item->id])}}"><i class="bi bi-pencil-fill text-success"></i></a></td>

@@ -16,4 +16,10 @@ class Products extends Model
         'image',
         
     ];
+    //child table
+    //foreign key field
+    public function categoy(){
+
+        return $this->belongsTo(Categories::class,'categories_id','id');
+    }
 }

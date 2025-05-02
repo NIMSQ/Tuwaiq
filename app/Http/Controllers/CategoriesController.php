@@ -19,6 +19,7 @@ class CategoriesController extends Controller
             'categ_name'=>'required|string|max:255',
             'categ_des'=>'nullable|string|max:255'
            ]);
+           
         //on the left side must be the same fiels name in DB.
         $arr = [
             'name'=>$request->categ_name,
