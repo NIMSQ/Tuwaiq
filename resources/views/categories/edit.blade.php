@@ -25,6 +25,13 @@
                                 <input type="text" class="form-control" name="categ_des" value="{{$item->description}}" >
             
                             </div>
+                            <div class="col">
+                                <label> الأيقونه </label>
+                                <input type="text" class="form-control" name="icon" value="{{$item->icon}}" >
+                                @error ('icon')
+                                <small class="text-danger">{{ $message }}</small>
+                                @enderror
+                            </div>
                         </div>
                         <div class="row">
                             <div class="col">

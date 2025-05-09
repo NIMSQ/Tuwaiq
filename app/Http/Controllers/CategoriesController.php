@@ -8,6 +8,7 @@ class CategoriesController extends Controller
 {
     //
     public function Index(){
+        
         $getData = categories::All();
         return view('categories.index',['data'=>$getData]);
 
@@ -23,7 +24,8 @@ class CategoriesController extends Controller
         //on the left side must be the same fiels name in DB.
         $arr = [
             'name'=>$request->categ_name,
-            'description'=>$request->categ_des
+            'description'=>$request->categ_des,
+            'icon'=>$request->icon
         ];
         $items = categories::Create($arr);
         $items->save();
@@ -52,7 +54,8 @@ class CategoriesController extends Controller
         if($data){
         $data->update([
             'name'=>$request->categ_name,
-            'description'=>$request->categ_des
+            'description'=>$request->categ_des,
+            'icon'=>$request->icon
         ]);
         
     }

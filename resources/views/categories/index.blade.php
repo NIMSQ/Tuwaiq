@@ -50,6 +50,13 @@
                                 <small class="text-danger">{{ $message }}</small>
                                 @enderror
                             </div>
+                            <div class="col">
+                                <label> الأيقونه </label>
+                                <input type="text" class="form-control" name="icon" >
+                                @error ('icon')
+                                <small class="text-danger">{{ $message }}</small>
+                                @enderror
+                            </div>
                         </div>
                         <div class="row">
                             <div class="col">
